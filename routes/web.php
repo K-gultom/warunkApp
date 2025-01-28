@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\ProductPost;
+use App\Http\Controllers\Test\testController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('test');
 });
 
-// Route::get('/live-link', [ProductPost]);
+
+Route::get('/live-link', [testController::class, 'index'])->name('live-link');
+// Route::get('/live-link', App\Livewire\ProductPost::class)->name('live-link');
